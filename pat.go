@@ -10,6 +10,7 @@ import (
 	"path"
 	"strings"
 
+	"github.com/gorilla/context"
 	"github.com/gorilla/mux"
 )
 
@@ -70,6 +71,7 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		}
 		handler = r.NotFoundHandler
 	}
+	defer context.Clear(req)
 	handler.ServeHTTP(w, req)
 }
 
