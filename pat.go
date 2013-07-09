@@ -21,7 +21,7 @@ func New() *Router {
 
 // Router is a request router that implements a pat-like API.
 //
-// pat docs: http://gopkgdoc.appspot.com/pkg/github.com/bmizerany/pat
+// pat docs: http://godoc.org/github.com/bmizerany/pat
 type Router struct {
 	mux.Router
 }
