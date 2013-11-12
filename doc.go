@@ -7,7 +7,7 @@ Package gorilla/pat is a request router and dispatcher with a pat-like
 interface. It is an alternative to gorilla/mux that showcases how it can
 be used as a base for different API flavors. Package pat is documented at:
 
-	http://gopkgdoc.appspot.com/pkg/github.com/bmizerany/pat
+	http://godoc.org/github.com/bmizerany/pat
 
 Let's start registering a couple of URL paths and handlers:
 
