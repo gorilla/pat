@@ -31,9 +31,19 @@ func (r *Router) Add(meth, pat string, h http.Handler) *mux.Route {
 	return r.NewRoute().PathPrefix(pat).Handler(h).Methods(meth)
 }
 
+// Options registers a pattern with a handler for OPTIONS requests.
+func (r *Router) Options(pat string, h http.HandlerFunc) *mux.Route {
+	return r.Add("OPTIONS", pat, h)
+}
+
 // Delete registers a pattern with a handler for DELETE requests.
 func (r *Router) Delete(pat string, h http.HandlerFunc) *mux.Route {
 	return r.Add("DELETE", pat, h)
+}
+
+// Head registers a pattern with a handler for HEAD requests.
+func (r *Router) Head(pat string, h http.HandlerFunc) *mux.Route {
+	return r.Add("HEAD", pat, h)
 }
 
 // Get registers a pattern with a handler for GET requests.

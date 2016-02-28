@@ -17,8 +17,12 @@ func myHandler(w http.ResponseWriter, r *http.Request) {
 func testMatch(t *testing.T, meth, pat, path string, ok bool, vars map[string]string) {
 	r := New()
 	switch meth {
+	case "OPTIONS":
+		r.Options(pat, myHandler)
 	case "DELETE":
 		r.Delete(pat, myHandler)
+	case "HEAD":
+		r.Head(pat, myHandler)
 	case "GET":
 		r.Get(pat, myHandler)
 	case "POST":
@@ -48,7 +52,9 @@ func testMatch(t *testing.T, meth, pat, path string, ok bool, vars map[string]st
 }
 
 func TestPatMatch(t *testing.T) {
+	testMatch(t, "OPTIONS", "/foo/{name}", "/foo/bar", true, map[string]string{":name": "bar"})
 	testMatch(t, "DELETE", "/foo/{name}", "/foo/bar", true, map[string]string{":name": "bar"})
+	testMatch(t, "HEAD", "/foo/{name}", "/foo/bar", true, map[string]string{":name": "bar"})
 	testMatch(t, "GET", "/foo/{name}", "/foo/bar/baz", true, map[string]string{":name": "bar"})
 	testMatch(t, "POST", "/foo/{name}/baz", "/foo/bar/baz", true, map[string]string{":name": "bar"})
 	testMatch(t, "PUT", "/foo/{name}/baz", "/foo/bar/baz/ding", true, map[string]string{":name": "bar"})
