@@ -48,12 +48,12 @@ func deleteOneThing(wr http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-    router := pat.New()
+	router := pat.New()
 
 	router.Get("/things", getAllTheThings)
 
-    router.Put("/things/{id}", putOneThing)
-    router.Delete("/things/{id}", deleteOneThing)
+	router.Put("/things/{id}", putOneThing)
+	router.Delete("/things/{id}", deleteOneThing)
 
 	router.Get("/", homeHandler)
 
