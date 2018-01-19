@@ -51,8 +51,10 @@ func main() {
 	router := pat.New()
 
 	router.Get("/things", getAllTheThings)
+
 	router.Put("/things/{id}", putOneThing)
 	router.Delete("/things/{id}", deleteOneThing)
+  
 	router.Get("/", homeHandler)
 
 	http.Handle("/", router)
