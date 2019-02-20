@@ -70,7 +70,7 @@ func (r *Router) Patch(pat string, h http.HandlerFunc) *mux.Route {
 func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 	// Clean path to canonical form and redirect.
 	if p := cleanPath(req.URL.Path); p != req.URL.Path {
-		w.Header().Set("Location", p)
+		w.Header().Set("Location", strings.Replace(p, "\\", "%5c", -1))
 		w.WriteHeader(http.StatusMovedPermanently)
 		return
 	}
