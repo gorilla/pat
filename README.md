@@ -1,7 +1,7 @@
 pat
 ===
 [![GoDoc](https://godoc.org/github.com/gorilla/pat?status.svg)](https://godoc.org/github.com/gorilla/pat)
-[![Build Status](https://travis-ci.org/gorilla/pat.svg?branch=master)](https://travis-ci.org/gorilla/pat)
+[![CircleCI](https://circleci.com/gh/gorilla/pat.svg?style=svg)](https://circleci.com/gh/gorilla/pat)
 
 ### How to use?
 
