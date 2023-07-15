@@ -3,8 +3,6 @@ pat
 [![GoDoc](https://godoc.org/github.com/gorilla/pat?status.svg)](https://godoc.org/github.com/gorilla/pat)
 [![CircleCI](https://circleci.com/gh/gorilla/pat.svg?style=svg)](https://circleci.com/gh/gorilla/pat)
 
-> 👷 This library is in maintenance mode.
-
 ### How to use?
 
 pat is pretty simple. The documentation lives [here](http://www.gorillatoolkit.org/pkg/pat).
