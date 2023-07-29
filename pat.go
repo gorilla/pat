@@ -86,9 +86,9 @@ func (r *Router) ServeHTTP(w http.ResponseWriter, req *http.Request) {
 		}
 		handler = r.NotFoundHandler
 	}
-	if !r.KeepContext {
-		defer context.Clear(req)
-	}
+
+	defer context.Clear(req)
+
 	handler.ServeHTTP(w, req)
 }
 
