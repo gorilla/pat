@@ -1,6 +1,6 @@
 module github.com/gorilla/pat
 
-go 1.19
+go 1.20
 
 require (
 	github.com/gorilla/context v1.1.1
