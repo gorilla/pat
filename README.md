@@ -6,9 +6,6 @@
 [![sourcegraph](https://sourcegraph.com/github.com/gorilla/pat/-/badge.svg)](https://sourcegraph.com/github.com/gorilla/pat?badge)
 
 ![Gorilla Logo](https://github.com/gorilla/.github/assets/53367916/d92caabf-98e0-473e-bfbf-ab554ba435e5)
-### How to use?
-
-pat is pretty simple. The documentation lives [here](http://www.gorillatoolkit.org/pkg/pat).
 
 ### Install
 With a properly configured Go toolchain:
@@ -65,7 +62,8 @@ func main() {
 }
 ```
 Notice how the routes descend? That's because Pat will take the first route
-that matches. For your own testing, take the line ```router.Get("/",
+that matches.  
+For your own testing, take the line ```router.Get("/",
 homeHandler)``` and put it above the other routes and run the example. When you
-try to curl any of the routes, you'll only get what the homeHandler returns.
+try to curl any of the routes, you'll only get what the homeHandler returns.  
 Design your routes carefully.
