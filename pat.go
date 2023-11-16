@@ -16,7 +16,9 @@ import (
 
 // New returns a new router.
 func New() *Router {
-	return &Router{}
+	return &Router{
+		Router: *mux.NewRouter(),
+	}
 }
 
 // Router is a request router that implements a pat-like API.
