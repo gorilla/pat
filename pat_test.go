@@ -62,3 +62,21 @@ func TestPatMatch(t *testing.T) {
 	testMatch(t, "GET", "/foo/x{name}", "/foo/xbar/baz", true, map[string]string{":name": "bar"})
 	testMatch(t, "PATCH", "/foo/x{name}", "/foo/xbar/baz", true, map[string]string{":name": "bar"})
 }
+
+func TestNamedRoutes(t *testing.T) {
+	router := New()
+	route := router.Get("/", nil)
+	name := "foo"
+	route.Name(name)
+	if route.GetError() != nil {
+		t.Errorf("Route name assign: %v", route.GetError())
+	}
+	gotRoute := router.Router.Get(name)
+	if gotRoute == nil {
+		t.Errorf("mux.Router.Get by name returned nil")
+	}
+	gotName := gotRoute.GetName()
+	if gotName != name {
+		t.Errorf("Unexpected route name: got=%q, want=%q", gotName, name)
+	}
+}
